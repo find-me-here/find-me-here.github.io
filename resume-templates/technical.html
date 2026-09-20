@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Technical</title>
+  <meta name="description" content="Monospace accents, skill tags and code-style comments for engineers.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+    body { padding: 52px 58px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header { display: flex; align-items: flex-start; gap: 20px; }
+    .who { flex: 1; min-width: 0; }
+    h1 { font-size: 32px; font-weight: 800; line-height: 1.1; color: #0f172a; }
+    .role { margin-top: 6px; font-family: var(--mono); font-size: 13px; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; margin-top: 8px; font-family: var(--mono); font-size: 11px; color: #64748b; }
+    .contact span + span::before { content: "·"; margin: 0 8px; }
+    .photo { flex: none; width: 72px; height: 72px; border-radius: 12px; background: #f4f6f8; box-shadow: 0 0 0 2px var(--accent); }
+    .rs { margin-top: 24px; }
+    .rs-title { margin-bottom: 12px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.04em; text-transform: lowercase; }
+    .rs-title::before { content: "// "; opacity: 0.6; }
+    .rs-experience .rs-entry, .rs-projects .rs-entry { padding-left: 14px; border-left: 2px solid color-mix(in srgb, var(--accent) 35%, var(--page)); }
+    .rs-date, .rs-meta, .rs-stack { font-family: var(--mono); font-size: 11px; font-style: normal; }
+    .rs-sub { font-style: normal; }
+    .rs-skill { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
+    .rs-skill-label { flex: none; width: 96px; font-family: var(--mono); font-size: 11px; font-weight: 500; color: #64748b; }
+    .rs-skill-label::after { content: none; }
+    .rs-chip { display: inline-block; margin: 0 5px 5px 0; padding: 1px 8px; border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--page)); border-radius: 4px; background: color-mix(in srgb, var(--accent) 8%, var(--page)); font-family: var(--mono); font-size: 10.5px; color: #0f172a; }
+    .rs-chip::after { content: none; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+      <p class="contact" data-group><span data-slot="location"></span><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+    </div>
+    <div class="photo" data-slot="avatar"></div>
+  </header>
+  <main data-sections="*"></main>
+</body>
+</html>

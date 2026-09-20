@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Corporate</title>
+  <meta name="description" content="Layered banner header with a round photo, icon contact column and a career timeline.">
+  <style>
+    :root {
+      --accent: #0f766e; --page: #ffffff;
+      --deep: color-mix(in srgb, var(--accent) 45%, #0b1626);
+      --fold: color-mix(in srgb, var(--accent) 75%, #000);
+      --ink: #111827;
+    }
+    body { position: relative; padding: 40px 0 64px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+    /* Ribbon at the top of the first page; the footer band is fixed, so it repeats on every printed page. */
+    .deco { position: absolute; z-index: 0; pointer-events: none; }
+    .deco i { position: absolute; display: block; }
+    .deco-top { top: 0; left: 0; right: 0; height: 130px; }
+    .deco-top .navy { top: 0; left: 0; width: 360px; height: 130px; background: var(--deep); clip-path: polygon(0 0, 345px 0, 355px 100%, 0 100%); }
+    .deco-top .fold { top: 68px; left: 317px; width: 76px; height: 56px; background: var(--fold); clip-path: polygon(0 0, 100% 0, 50% 100%); }
+    .deco-top .band { top: 0; left: 317px; right: 0; height: 68px; background: var(--accent); clip-path: polygon(26px 0, 100% 0, 100% 100%, 0 100%); }
+    .deco-foot { position: fixed; left: 0; right: 0; bottom: 0; height: 54px; }
+    .deco-foot .bar { left: 0; bottom: 0; width: 590px; height: 22px; background: var(--accent); }
+    .deco-foot .navy { right: 0; bottom: 0; width: 219px; height: 54px; background: var(--deep); clip-path: polygon(28px 0, 100% 0, 100% 100%, 0 100%); }
+
+    header { position: relative; z-index: 1; height: 292px; margin-top: -40px; }
+    .photo { position: absolute; top: 86px; left: 72px; width: 160px; height: 160px; border: 6px solid var(--page); border-radius: 50%; background: color-mix(in srgb, var(--accent) 20%, var(--page)); }
+    .who { position: absolute; top: 130px; left: 292px; right: 34px; }
+    h1 { font-size: 38px; font-weight: 800; line-height: 1.15; letter-spacing: 0.02em; text-transform: uppercase; overflow-wrap: anywhere; color: var(--deep); }
+    .role { margin-top: 6px; font-size: 19px; font-weight: 300; line-height: 1.3; letter-spacing: 0.03em; text-transform: uppercase; color: #4b5563; }
+    .rule { width: 64px; height: 4px; margin-top: 14px; background: var(--deep); }
+
+    .cols { position: relative; display: flex; align-items: flex-start; gap: 44px; padding: 0 34px 0 60px; }
+    aside { width: 190px; flex: none; }
+    main { flex: 1; min-width: 0; }
+    .rs { margin: 0 0 26px; }
+    aside div[data-group] { margin-bottom: 26px; }
+    aside h3, .rs-title { margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--deep); font-size: 15px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--deep); }
+    aside h3, aside .rs-title { border-bottom-color: var(--ink); color: var(--ink); }
+
+    /* Contact: an icon per detail, cut out of the ink colour so it follows the theme. */
+    aside ul { list-style: none; }
+    aside li { position: relative; margin-bottom: 14px; padding-left: 28px; font-size: 12px; line-height: 1.5; word-break: break-word; }
+    aside li::after { content: ""; position: absolute; top: 2px; left: 0; width: 15px; height: 15px; background: var(--ink); -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
+    li[data-slot="phone"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E"); }
+    li[data-slot="email"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E"); }
+    li[data-slot="location"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E"); }
+    li[data-slot="website"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E"); }
+    li[data-slot="linkedin"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z'/%3E%3C/svg%3E"); }
+
+    /* Sidebar entries read date, then school or issuer, then the detail below. */
+    aside .rs-entry { display: flex; flex-direction: column; margin-bottom: 18px; }
+    aside .rs-row { display: contents; }
+    aside .rs-date { order: 1; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: var(--ink); }
+    aside .rs-sub { order: 2; font-size: 11.5px; font-weight: 700; font-style: normal; text-transform: uppercase; color: var(--ink); }
+    aside .rs-head { order: 3; position: relative; margin-top: 4px; padding-left: 14px; font-size: 12px; font-weight: 400; color: var(--ink); }
+    aside .rs-head::before { content: ""; position: absolute; top: 0.65em; left: 3px; width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+    aside .rs-skill { margin-bottom: 10px; }
+    aside .rs-skill-label { display: block; margin-bottom: 4px; font-size: 12px; color: var(--ink); }
+    aside .rs-skill-label::after { content: none; }
+    aside .rs-skill-items { display: block; }
+    aside .rs-chip { position: relative; display: block; margin-bottom: 4px; padding-left: 14px; font-size: 12px; }
+    aside .rs-chip::before { content: ""; position: absolute; top: 0.65em; left: 3px; width: 4px; height: 4px; border-radius: 50%; background: currentColor; }
+    aside .rs-chip::after { content: none; }
+    aside .rs-text { font-size: 12px; }
+
+    main .rs-text, main .rs-list { font-size: 12px; line-height: 1.55; color: #4b5563; text-align: justify; }
+    main .rs-entry { margin-bottom: 18px; }
+    main .rs-head { font-weight: 600; color: #374151; }
+    main .rs-date { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+    main .rs-sub { font-size: 13px; font-style: normal; color: #4b5563; }
+    main .rs-list { margin: 8px 0 0 18px; }
+
+    /* Career timeline: a dot on every role, joined by a line. */
+    main .rs-experience .rs-entry { position: relative; margin-bottom: 0; padding: 0 36px 20px 26px; }
+    main .rs-experience .rs-entry:last-child { padding-bottom: 0; }
+    main .rs-experience .rs-entry::before { content: ""; position: absolute; top: 7px; bottom: -7px; left: 3px; width: 2px; background: var(--deep); }
+    main .rs-experience .rs-entry:last-child::before { bottom: 0; }
+    main .rs-experience .rs-entry::after { content: ""; position: absolute; top: 4px; left: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--deep); }
+  </style>
+</head>
+<body>
+  <div class="deco deco-top" aria-hidden="true"><i class="navy"></i><i class="fold"></i><i class="band"></i></div>
+  <div class="deco deco-foot" aria-hidden="true"><i class="bar"></i><i class="navy"></i></div>
+  <header data-section="personal">
+    <div class="photo" data-slot="avatar"></div>
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+      <div class="rule"></div>
+    </div>
+  </header>
+  <div class="cols">
+    <aside>
+      <div data-group data-section="personal">
+        <h3>Contact</h3>
+        <ul>
+          <li data-slot="phone"></li>
+          <li data-slot="email"></li>
+          <li data-slot="location"></li>
+          <li data-slot="website"></li>
+          <li data-slot="linkedin"></li>
+        </ul>
+      </div>
+      <div data-sections="education skills"></div>
+    </aside>
+    <main data-sections="*"></main>
+  </div>
+</body>
+</html>

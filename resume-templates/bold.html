@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bold</title>
+  <meta name="description" content="Oversized name and solid section tags for a confident, high-impact page.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    body { padding: 46px 60px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header { display: flex; align-items: flex-start; gap: 24px; }
+    .who { flex: 1; min-width: 0; }
+    h1 { max-width: 440px; font-size: 56px; font-weight: 900; line-height: 0.98; letter-spacing: -0.02em; text-transform: uppercase; color: #0f172a; }
+    .bar { width: 96px; height: 10px; margin: 14px 0 10px; background: var(--accent); }
+    .role { font-size: 14px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 14px; font-size: 11.5px; color: #475569; }
+    .contact span::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; background: var(--accent); }
+    .contact span:empty::before { display: none; }
+    .photo { flex: none; width: 96px; height: 96px; background: #f4f6f8; box-shadow: 8px 8px 0 var(--accent); }
+    .rs { margin-top: 20px; }
+    .rs-title { display: inline-block; margin-bottom: 10px; padding: 4px 12px; background: var(--accent); letter-spacing: 0.16em; color: #fff; }
+    .rs-head { font-size: 14px; font-weight: 800; }
+    .rs-entry { margin-bottom: 11px; }
+    .rs-date { font-weight: 700; color: var(--accent); }
+    .rs-sub { color: #475569; font-style: normal; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <div class="bar"></div>
+      <p class="role" data-slot="title"></p>
+      <p class="contact" data-group><span data-slot="location"></span><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+    </div>
+    <div class="photo" data-slot="avatar"></div>
+  </header>
+  <main data-sections="*"></main>
+</body>
+</html>

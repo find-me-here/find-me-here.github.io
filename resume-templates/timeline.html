@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Timeline</title>
+  <meta name="description" content="Dates down the left and a vertical line that walks through your career.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    body { padding: 54px 60px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header { display: flex; align-items: flex-start; gap: 20px; padding-left: 18px; border-left: 6px solid var(--accent); }
+    .who { flex: 1; min-width: 0; }
+    h1 { font-size: 34px; font-weight: 800; line-height: 1.1; color: #0f172a; }
+    .role { margin-top: 4px; font-size: 15px; font-weight: 600; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; gap: 4px 0; margin-top: 8px; font-size: 11.5px; color: #64748b; }
+    .contact span + span::before { content: "·"; margin: 0 8px; }
+    .photo { flex: none; width: 72px; height: 72px; border-radius: 50%; background: #f4f6f8; box-shadow: 0 0 0 2px var(--accent); }
+    .rs { margin-top: 26px; }
+    .rs-title { margin-bottom: 14px; }
+    .rs-experience .rs-entry, .rs-education .rs-entry { position: relative; display: grid; grid-template-columns: 104px 1fr; column-gap: 32px; margin-bottom: 0; padding-bottom: 16px; }
+    .rs-experience .rs-entry::before, .rs-education .rs-entry::before { content: ""; position: absolute; top: 6px; bottom: -6px; left: 119px; width: 2px; background: color-mix(in srgb, var(--accent) 25%, var(--page)); }
+    .rs-experience .rs-entry:last-child::before, .rs-education .rs-entry:last-child::before { display: none; }
+    .rs-experience .rs-entry::after, .rs-education .rs-entry::after { content: ""; position: absolute; top: 4px; left: 113px; width: 14px; height: 14px; border: 3px solid var(--page); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+    .rs-experience .rs-row, .rs-education .rs-row { display: contents; }
+    .rs-experience .rs-date, .rs-education .rs-date { grid-column: 1; grid-row: 1; padding-top: 1px; font-weight: 600; text-align: right; white-space: normal; }
+    .rs-experience .rs-entry > *:not(.rs-row), .rs-education .rs-entry > *:not(.rs-row), .rs-experience .rs-head, .rs-education .rs-head, .rs-experience .rs-sub, .rs-education .rs-sub, .rs-experience .rs-meta, .rs-education .rs-meta { grid-column: 2; }
+    .rs-sub { color: var(--accent); font-weight: 600; font-style: normal; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+      <p class="contact" data-group><span data-slot="location"></span><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+    </div>
+    <div class="photo" data-slot="avatar"></div>
+  </header>
+  <main data-sections="*"></main>
+</body>
+</html>

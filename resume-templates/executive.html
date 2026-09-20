@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Executive</title>
+  <meta name="description" content="Centered serif header with a double rule, for senior and formal roles.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    body { padding: 56px 64px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; font-family: Georgia, "Times New Roman", serif; }
+    header { padding-bottom: 16px; border-bottom: 3px double var(--accent); text-align: center; }
+    h1 { font-size: 30px; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: #0f172a; }
+    .role { margin-top: 6px; font-size: 14px; font-style: italic; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 10px; font-size: 11.5px; color: #64748b; }
+    .contact span + span::before { content: "|"; margin: 0 10px; color: #cbd5e1; }
+    .photo { width: 84px; height: 84px; margin: 0 auto 14px; border-radius: 50%; background: #f4f6f8; box-shadow: 0 0 0 2px var(--accent); }
+    .rs-title { padding-bottom: 4px; border-bottom: 1px solid #cbd5e1; letter-spacing: 0.14em; font-weight: 700; }
+    .rs-sub { color: #475569; }
+    .rs-head { font-size: 13.5px; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="photo" data-slot="avatar"></div>
+    <h1 data-slot="name"></h1>
+    <p class="role" data-slot="title"></p>
+    <p class="contact" data-group><span data-slot="location"></span><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+  </header>
+  <main data-sections="*"></main>
+</body>
+</html>
