@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
+Disallow: /sites
+Disallow: /resumes
+Disallow: /pages
+Disallow: /qr
+Disallow: /profile
+Disallow: /notes
+Disallow: /unknown-words
+
+Sitemap: https://meropage.com/sitemap.xml
