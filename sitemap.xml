@@ -11,6 +11,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://meropage.com/nepali-date-convertor/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meropage.com/nepali-date-convertor/nepali-calendar/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://meropage.com/practice-reading/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -47,6 +57,11 @@
   </url>
   <url>
     <loc>https://meropage.com/tools/docs-to-pdf/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://meropage.com/tools/document-viewer/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
