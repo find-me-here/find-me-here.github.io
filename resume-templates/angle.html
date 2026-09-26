@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angle</title>
+  <meta name="description" content="Diagonal colour slabs behind the photo and slanted section markers.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; --deep: color-mix(in srgb, var(--accent) 70%, #0f172a); }
+    body { padding: 40px 0 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+    /* Two parallel slabs cut on the same slant fill the top right of the first page. */
+    header { position: relative; display: flex; align-items: center; gap: 24px; min-height: 200px; margin-top: -40px; padding: 40px 56px 30px; }
+    header::before, header::after { content: ""; position: absolute; top: 0; right: 0; height: 100%; }
+    header::before { width: 336px; background: color-mix(in srgb, var(--accent) 16%, var(--page)); clip-path: polygon(64px 0, 100% 0, 100% 100%, 0 100%); }
+    header::after { width: 252px; background: var(--accent); clip-path: polygon(64px 0, 100% 0, 100% 100%, 0 100%); }
+    .who { position: relative; z-index: 1; flex: 1; min-width: 0; max-width: 400px; }
+    h1 { font-size: 38px; font-weight: 800; line-height: 1.05; overflow-wrap: anywhere; color: #0f172a; }
+    .role { margin-top: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 14px; font-size: 11.5px; color: #475569; }
+    .contact span { min-width: 0; word-break: break-word; }
+    .contact span:not(:empty)::before { content: ""; display: inline-block; width: 9px; height: 4px; margin: 0 7px 2px 0; background: var(--accent); transform: skewX(-30deg); }
+    .photo { position: relative; z-index: 1; flex: none; width: 128px; height: 128px; margin-left: auto; border: 5px solid var(--page); border-radius: 50%; background: color-mix(in srgb, var(--accent) 30%, var(--page)); }
+
+    main { padding: 6px 56px 0; }
+    .rs-title { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 12.5px; letter-spacing: 0.14em; color: #0f172a; }
+    .rs-title::before { content: ""; flex: none; width: 22px; height: 10px; background: var(--accent); clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); }
+    .rs-title::after { content: ""; flex: 1; height: 1px; background: #e2e8f0; }
+    .rs-date { padding: 1px 12px; background: color-mix(in srgb, var(--accent) 12%, var(--page)); font-size: 11px; font-weight: 600; color: var(--deep); clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%); }
+    .rs-sub { font-style: normal; font-weight: 600; color: #334155; }
+    .rs-list li::marker { color: var(--accent); }
+    .rs-skill { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+    .rs-skill-label { flex: none; width: 110px; }
+    .rs-skill-label::after { content: none; }
+    .rs-chip { display: inline-block; margin: 0 3px 5px 0; padding: 2px 12px; background: color-mix(in srgb, var(--accent) 10%, var(--page)); font-size: 11.5px; clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%); }
+    .rs-chip::after { content: none; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+      <p class="contact" data-group><span data-slot="location"></span><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+    </div>
+    <div class="photo" data-slot="avatar"></div>
+  </header>
+  <main data-sections="*"></main>
+</body>
+</html>

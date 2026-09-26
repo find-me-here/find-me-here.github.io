@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cards</title>
+  <meta name="description" content="Every section on its own white card over a tinted page, in two columns.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    html { background: color-mix(in srgb, var(--accent) 8%, var(--page)); }
+    body { padding: 34px 34px 40px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header, .rs { border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--page)); border-radius: 14px; background: var(--page); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header { display: flex; align-items: center; gap: 22px; padding: 24px 26px; }
+    .photo { flex: none; width: 92px; height: 92px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 16%, var(--page)); }
+    .who { flex: 1; min-width: 0; }
+    h1 { font-size: 32px; font-weight: 800; line-height: 1.1; overflow-wrap: anywhere; color: #0f172a; }
+    .role { margin-top: 4px; font-size: 14.5px; font-weight: 600; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .contact span { max-width: 100%; padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 9%, var(--page)); font-size: 11px; color: #334155; word-break: break-word; }
+
+    .cols { display: flex; align-items: flex-start; gap: 14px; margin-top: 14px; }
+    .cols > div { min-width: 0; }
+    .side { flex: none; width: 232px; }
+    .main { flex: 1; }
+    .rs { margin-top: 14px; padding: 16px 18px; }
+    .rs:first-child { margin-top: 0; }
+    .rs-title { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 11px; letter-spacing: 0.14em; color: #0f172a; }
+    .rs-title::before { content: ""; flex: none; width: 4px; height: 14px; border-radius: 2px; background: var(--accent); }
+    .rs-sub { font-style: normal; color: var(--accent); font-weight: 600; }
+    .rs-list li::marker { color: var(--accent); }
+    .main .rs-entry + .rs-entry { padding-top: 12px; border-top: 1px dashed #e2e8f0; }
+
+    .side .rs-entry { margin-bottom: 10px; }
+    .side .rs-row { display: block; }
+    .side .rs-date, .side .rs-meta { display: block; }
+    .side .rs-head { font-size: 12.5px; }
+    .side .rs-text { font-size: 12px; }
+    .side .rs-skill { margin-bottom: 8px; }
+    .side .rs-skill-label { display: block; margin-bottom: 4px; font-size: 11.5px; }
+    .side .rs-skill-label::after { content: none; }
+    .side .rs-skill-items { display: block; }
+    .side .rs-chip { display: inline-block; margin: 0 4px 5px 0; padding: 2px 9px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 10%, var(--page)); font-size: 11px; color: #0f172a; }
+    .side .rs-chip::after { content: none; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="photo" data-slot="avatar"></div>
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+      <p class="contact" data-group><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="location"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+    </div>
+  </header>
+  <div class="cols">
+    <div class="side" data-sections="skills education certifications interests"></div>
+    <div class="main" data-sections="*"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Portrait</title>
+  <meta name="description" content="Tall photo beside a profile header that holds your summary, with a closing grid for skills and education.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    body { padding: 50px 56px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .top { display: flex; align-items: flex-start; gap: 34px; padding-bottom: 24px; border-bottom: 1px solid #e2e8f0; }
+    .top .photo { flex: none; width: 150px; height: 188px; border-radius: 6px; background: color-mix(in srgb, var(--accent) 14%, var(--page)); box-shadow: 9px 9px 0 color-mix(in srgb, var(--accent) 30%, var(--page)); }
+    .who { flex: 1; min-width: 0; }
+    h1 { font-size: 38px; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; overflow-wrap: anywhere; color: #0f172a; }
+    .role { margin-top: 6px; font-size: 15px; font-weight: 600; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; gap: 3px 16px; margin-top: 10px; font-size: 11.5px; color: #64748b; }
+    .contact span { min-width: 0; word-break: break-word; }
+    .contact span:not(:empty)::before { content: ""; display: inline-block; width: 5px; height: 5px; margin: 0 7px 2px 0; border-radius: 50%; background: var(--accent); }
+
+    /* The summary opens the page from inside the header, set as an intro rather than a section. */
+    .profile .rs { margin-top: 16px; padding-left: 14px; border-left: 3px solid var(--accent); }
+    .profile .rs-title { margin-bottom: 3px; font-size: 10.5px; color: #64748b; }
+    .profile .rs-text { font-size: 13px; line-height: 1.6; color: #1e293b; }
+
+    .rs-title { font-size: 12px; letter-spacing: 0.16em; color: #0f172a; }
+    main .rs-title::after, .extras .rs-title::after { content: ""; display: block; width: 28px; height: 3px; margin-top: 6px; background: var(--accent); }
+    .rs-head { font-size: 13.5px; }
+    .rs-date { font-weight: 600; color: var(--accent); }
+    .rs-sub { font-style: normal; font-weight: 500; }
+    .rs-list li::marker { color: var(--accent); }
+    .rs-skill-label { display: block; }
+    .rs-skill-label::after { content: none; }
+    .rs-skill { margin-bottom: 7px; }
+
+    .extras { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+    .extras:not(:empty) { margin-top: 26px; border-top: 1px solid #e2e8f0; }
+    .extras .rs { min-width: 0; }
+    .extras .rs-row { flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div class="photo" data-slot="avatar" data-section="personal"></div>
+    <div class="who">
+      <header data-section="personal">
+        <h1 data-slot="name"></h1>
+        <p class="role" data-slot="title"></p>
+        <p class="contact" data-group><span data-slot="location"></span><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+      </header>
+      <div class="profile" data-sections="summary"></div>
+    </div>
+  </div>
+  <main data-sections="*"></main>
+  <div class="extras" data-sections="skills education certifications interests"></div>
+</body>
+</html>

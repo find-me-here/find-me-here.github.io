@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Boxed</title>
+  <meta name="description" content="Centered name in an outlined box, with boxed section headings on a hairline.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    body { padding: 52px 62px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header { text-align: center; }
+    .photo { width: 88px; height: 88px; margin: 0 auto 18px; border-radius: 50%; background: #f1f5f9; box-shadow: 0 0 0 4px var(--page), 0 0 0 5px var(--accent); }
+    h1 { display: inline-block; max-width: 100%; padding: 10px 26px; border: 2px solid var(--accent); font-size: 28px; font-weight: 700; line-height: 1.2; letter-spacing: 0.22em; text-indent: 0.22em; text-transform: uppercase; overflow-wrap: anywhere; color: #0f172a; }
+    .role { margin-top: 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #475569; }
+    .contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; margin-top: 10px; font-size: 11.5px; color: #64748b; }
+    .contact span + span:not(:empty)::before { content: ""; display: inline-block; width: 4px; height: 4px; margin: 0 11px 2px 5px; background: var(--accent); transform: rotate(45deg); }
+
+    /* The heading's box sits on a hairline that runs across the page. */
+    .rs { position: relative; margin-top: 26px; }
+    .rs::before { content: ""; position: absolute; top: 14px; left: 0; right: 0; height: 1px; background: color-mix(in srgb, var(--accent) 35%, var(--page)); }
+    .rs-title { position: relative; width: fit-content; max-width: 100%; margin: 0 auto 14px; padding: 6px 18px; border: 1px solid var(--accent); background: var(--page); font-size: 11px; line-height: 16px; letter-spacing: 0.2em; text-indent: 0.2em; text-align: center; color: #0f172a; }
+    .rs-summary .rs-text, .rs-interests .rs-text { text-align: center; }
+    .rs-head { font-size: 13.5px; }
+    .rs-date { font-weight: 600; color: var(--accent); }
+    .rs-sub { font-style: normal; font-weight: 500; color: #475569; }
+    .rs-list li::marker { color: var(--accent); }
+    .rs-skill { display: flex; align-items: baseline; gap: 12px; margin-bottom: 5px; }
+    .rs-skill-label { flex: none; width: 120px; }
+    .rs-skill-label::after { content: none; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="photo" data-slot="avatar"></div>
+    <h1 data-slot="name"></h1>
+    <p class="role" data-slot="title"></p>
+    <p class="contact" data-group><span data-slot="location"></span><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+  </header>
+  <main data-sections="*"></main>
+</body>
+</html>

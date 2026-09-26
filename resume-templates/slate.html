@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Slate</title>
+  <meta name="description" content="Dark slate column on the right for the photo, contact details and skills.">
+  <style>
+    :root {
+      --accent: #0f766e; --page: #ffffff;
+      --slate: color-mix(in srgb, var(--accent) 18%, #0f172a);
+      --glow: color-mix(in srgb, var(--accent) 50%, #ffffff);
+    }
+    html { background: linear-gradient(to left, var(--slate) 256px, var(--page) 256px); }
+    body { display: flex; align-items: flex-start; }
+    main { flex: 1; min-width: 0; padding: 54px 40px 48px 56px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    aside { flex: none; width: 256px; padding: 50px 28px 48px; color: #cbd5e1; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+    h1 { font-size: 40px; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; overflow-wrap: anywhere; color: #0f172a; }
+    .role { margin-top: 10px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+    .rule { width: 56px; height: 4px; margin-top: 18px; background: var(--slate); }
+    main .rs { margin-top: 26px; }
+    main .rs-title { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 12.5px; letter-spacing: 0.14em; color: #0f172a; }
+    main .rs-title::before { content: ""; flex: none; width: 18px; height: 3px; background: var(--accent); }
+    main .rs-title::after { content: ""; flex: 1; height: 1px; background: #e2e8f0; }
+    main .rs-date { padding: 1px 8px; border-radius: 3px; background: color-mix(in srgb, var(--accent) 10%, var(--page)); font-size: 11px; font-weight: 600; color: color-mix(in srgb, var(--accent) 65%, #0f172a); }
+    main .rs-sub { font-style: normal; font-weight: 600; }
+    main .rs-list li::marker { color: var(--accent); }
+
+    aside .photo { width: 150px; height: 150px; margin: 0 auto 8px; border: 3px solid var(--glow); border-radius: 50%; background: rgba(255, 255, 255, 0.08); }
+    aside h3, aside .rs-title { margin: 24px 0 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255, 255, 255, 0.14); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--glow); }
+    aside .rs { margin-top: 0; }
+    aside ul { list-style: none; }
+    aside li { margin-bottom: 6px; font-size: 11.5px; line-height: 1.5; color: #e2e8f0; word-break: break-word; }
+    aside .rs-list { margin-left: 14px; list-style: disc; }
+    aside .rs-list li::marker { color: var(--glow); }
+    aside .rs-entry { margin-bottom: 11px; }
+    aside .rs-row { display: block; }
+    aside .rs-date, aside .rs-meta { display: block; }
+    aside .rs-head, aside .rs-skill-label { color: #ffffff; }
+    aside .rs-head { font-size: 12px; }
+    aside .rs-date, aside .rs-meta, aside .rs-sub { font-size: 11px; color: rgba(255, 255, 255, 0.68); }
+    aside .rs-text { font-size: 11.5px; color: #cbd5e1; }
+    aside .rs-skill { margin-bottom: 10px; }
+    aside .rs-skill-label { display: block; margin-bottom: 5px; font-size: 11.5px; }
+    aside .rs-skill-label::after { content: none; }
+    aside .rs-skill-items { display: block; }
+    aside .rs-chip { display: inline-block; margin: 0 4px 5px 0; padding: 2px 8px; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 4px; font-size: 11px; color: #f1f5f9; }
+    aside .rs-chip::after { content: none; }
+    aside .rs-empty { color: rgba(255, 255, 255, 0.6); }
+  </style>
+</head>
+<body>
+  <main>
+    <header data-section="personal">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+      <div class="rule"></div>
+    </header>
+    <div data-sections="*"></div>
+  </main>
+  <aside>
+    <div class="photo" data-slot="avatar" data-section="personal"></div>
+    <div data-group data-section="personal">
+      <h3>Contact</h3>
+      <ul>
+        <li data-slot="email"></li>
+        <li data-slot="phone"></li>
+        <li data-slot="location"></li>
+        <li data-slot="website"></li>
+        <li data-slot="linkedin"></li>
+      </ul>
+    </div>
+    <div data-sections="skills education certifications interests"></div>
+  </aside>
+</body>
+</html>

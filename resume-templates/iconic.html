@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Iconic</title>
+  <meta name="description" content="An icon beside every section heading and contact detail.">
+  <style>
+    :root {
+      --accent: #0f766e; --page: #ffffff;
+      --deep: color-mix(in srgb, var(--accent) 78%, #000000);
+      --tint: color-mix(in srgb, var(--accent) 14%, var(--page));
+    }
+    body { padding: 50px 58px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header { display: flex; align-items: center; gap: 24px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
+    .photo { flex: none; width: 92px; height: 92px; border-radius: 50%; background: var(--tint); box-shadow: 0 0 0 3px var(--page), 0 0 0 5px var(--accent); }
+    .who { flex: 1; min-width: 0; }
+    h1 { font-size: 34px; font-weight: 800; line-height: 1.1; overflow-wrap: anywhere; color: #0f172a; }
+    .role { margin-top: 3px; font-size: 15px; font-weight: 600; color: var(--accent); }
+    .contact { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; font-size: 11.5px; color: #475569; }
+    .contact span { position: relative; min-width: 0; padding-left: 19px; word-break: break-word; }
+
+    /* One icon, cut out of a colour so it follows the theme; each detail and section names its own. */
+    .contact span::after, .rs-title::after { content: ""; position: absolute; background: var(--accent); -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
+    .contact span::after { top: 2px; left: 0; width: 13px; height: 13px; }
+    [data-slot="phone"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'/%3E%3C/svg%3E"); }
+    [data-slot="email"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'/%3E%3C/svg%3E"); }
+    [data-slot="location"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E"); }
+    [data-slot="website"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E"); }
+    [data-slot="linkedin"] { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z'/%3E%3C/svg%3E"); }
+    .rs { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z'/%3E%3C/svg%3E"); }
+    .rs-summary { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E"); }
+    .rs-skills { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 2v11h3v9l7-12h-4l4-8z'/%3E%3C/svg%3E"); }
+    .rs-experience { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z'/%3E%3C/svg%3E"); }
+    .rs-education { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z'/%3E%3C/svg%3E"); }
+    .rs-projects { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z'/%3E%3C/svg%3E"); }
+    .rs-certifications { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E"); }
+    .rs-achievements { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E"); }
+    .rs-interests { --icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"); }
+
+    .rs { margin-top: 22px; padding-left: 40px; }
+    .rs-title { position: relative; display: flex; align-items: center; min-height: 28px; margin: 0 0 8px -40px; padding-left: 40px; font-size: 13px; letter-spacing: 0.1em; color: #0f172a; }
+    .rs-title::before { content: ""; position: absolute; top: 50%; left: 0; width: 28px; height: 28px; margin-top: -14px; border-radius: 50%; background: var(--tint); }
+    .rs-title::after { top: 50%; left: 7px; width: 14px; height: 14px; margin-top: -7px; background: var(--deep); }
+    .rs-head { font-size: 13.5px; }
+    .rs-date { font-weight: 600; color: var(--deep); }
+    .rs-sub { font-style: normal; font-weight: 600; color: #475569; }
+    .rs-list li::marker { color: var(--accent); }
+    .rs-skill { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+    .rs-skill-label { flex: none; width: 110px; }
+    .rs-skill-label::after { content: none; }
+    .rs-chip { display: inline-block; margin: 0 4px 5px 0; padding: 2px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 10%, var(--page)); font-size: 11.5px; color: #0f172a; }
+    .rs-chip::after { content: none; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="photo" data-slot="avatar"></div>
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+      <p class="contact" data-group><span data-slot="email"></span><span data-slot="phone"></span><span data-slot="location"></span><span data-slot="website"></span><span data-slot="linkedin"></span></p>
+    </div>
+  </header>
+  <main data-sections="*"></main>
+</body>
+</html>

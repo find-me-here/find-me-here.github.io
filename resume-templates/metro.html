@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Metro</title>
+  <meta name="description" content="Numbered sections under a labelled contact strip, clean and structured.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    body { padding: 50px 56px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    header { display: flex; align-items: center; gap: 22px; }
+    .photo { flex: none; width: 88px; height: 88px; background: color-mix(in srgb, var(--accent) 14%, var(--page)); }
+    .who { flex: 1; min-width: 0; padding-left: 18px; border-left: 5px solid var(--accent); }
+    h1 { font-size: 36px; font-weight: 800; line-height: 1.08; letter-spacing: -0.01em; overflow-wrap: anywhere; color: #0f172a; }
+    .role { margin-top: 5px; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; color: #475569; }
+
+    /* Each detail carries its own label; the label goes with it when the detail is blank. */
+    .contact { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 20px; margin-top: 22px; padding: 14px 18px; border-radius: 8px; background: color-mix(in srgb, var(--accent) 7%, var(--page)); }
+    .contact > div { min-width: 0; font-size: 11.5px; line-height: 1.4; color: #1e293b; word-break: break-word; }
+    .contact b { display: block; margin-bottom: 1px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+
+    main { counter-reset: section; }
+    .rs { margin-top: 24px; padding-left: 42px; counter-increment: section; }
+    .rs-title { display: flex; align-items: center; gap: 12px; margin: 0 0 10px -42px; font-size: 12.5px; letter-spacing: 0.16em; color: #0f172a; }
+    .rs-title::before { content: counter(section, decimal-leading-zero); flex: none; width: 30px; font-size: 20px; font-weight: 300; line-height: 1; letter-spacing: 0; color: var(--accent); }
+    .rs-title::after { content: ""; flex: 1; height: 1px; background: #e2e8f0; }
+    .rs-head { font-size: 13.5px; }
+    .rs-sub { font-style: normal; font-weight: 600; color: var(--accent); }
+    .rs-date { font-weight: 600; color: #334155; font-variant-numeric: tabular-nums; }
+    .rs-list li::marker { color: var(--accent); }
+    .rs-skill { display: flex; align-items: baseline; gap: 12px; margin-bottom: 5px; }
+    .rs-skill-label { flex: none; width: 110px; }
+    .rs-skill-label::after { content: none; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="photo" data-slot="avatar"></div>
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+    </div>
+  </header>
+  <div class="contact" data-group data-section="personal">
+    <div data-group><b>Email</b><span data-slot="email"></span></div>
+    <div data-group><b>Phone</b><span data-slot="phone"></span></div>
+    <div data-group><b>Location</b><span data-slot="location"></span></div>
+    <div data-group><b>Website</b><span data-slot="website"></span></div>
+    <div data-group><b>LinkedIn</b><span data-slot="linkedin"></span></div>
+  </div>
+  <main data-sections="*"></main>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiss</title>
+  <meta name="description" content="Strict grid with section labels in a left column and a heavy grotesk name.">
+  <style>
+    :root { --accent: #0f766e; --page: #ffffff; }
+    body { padding: 50px 58px 48px; box-decoration-break: clone; -webkit-box-decoration-break: clone; color: #18181b; font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif; }
+    header { display: flex; align-items: flex-start; gap: 24px; padding-top: 20px; border-top: 6px solid #18181b; }
+    .who { flex: 1; min-width: 0; }
+    h1 { font-size: 46px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; overflow-wrap: anywhere; color: #18181b; }
+    .role { margin-top: 10px; font-size: 16px; font-weight: 500; color: var(--accent); }
+    .photo { flex: none; width: 96px; height: 96px; background: #f4f4f5; }
+
+    /* Every block below the name sits on the same two-column grid: a label, then the content. */
+    .contact, .rs { display: flow-root; padding: 14px 0 0 164px; border-top: 1px solid #d4d4d8; }
+    .contact { margin-top: 26px; }
+    .rs { margin-top: 20px; }
+    .contact h3, .rs-title { float: left; width: 140px; margin: 2px 0 0 -164px; font-size: 10.5px; font-weight: 700; line-height: 1.4; letter-spacing: 0.1em; text-transform: uppercase; color: #18181b; }
+    .contact h3::before, .rs-title::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; background: var(--accent); vertical-align: 1px; }
+    .contact ul { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 24px; list-style: none; font-size: 12px; color: #3f3f46; }
+    .contact li { min-width: 0; word-break: break-word; }
+
+    .rs-text { color: #3f3f46; }
+    .rs-entry { margin-bottom: 13px; }
+    .rs-head { font-size: 13.5px; font-weight: 700; color: #18181b; }
+    .rs-date { font-weight: 600; color: #18181b; font-variant-numeric: tabular-nums; }
+    .rs-sub { font-style: normal; font-weight: 500; color: var(--accent); }
+    .rs-list li::marker { color: var(--accent); }
+    .rs-skill { display: grid; grid-template-columns: 112px 1fr; gap: 12px; margin-bottom: 4px; }
+    .rs-skill-label { font-weight: 600; }
+    .rs-skill-label::after { content: none; }
+  </style>
+</head>
+<body>
+  <header data-section="personal">
+    <div class="who">
+      <h1 data-slot="name"></h1>
+      <p class="role" data-slot="title"></p>
+    </div>
+    <div class="photo" data-slot="avatar"></div>
+  </header>
+  <div class="contact" data-group data-section="personal">
+    <h3>Contact</h3>
+    <ul>
+      <li data-slot="email"></li>
+      <li data-slot="phone"></li>
+      <li data-slot="location"></li>
+      <li data-slot="website"></li>
+      <li data-slot="linkedin"></li>
+    </ul>
+  </div>
+  <main data-sections="*"></main>
+</body>
+</html>
