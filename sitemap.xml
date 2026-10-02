@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://meropage.com/info/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://meropage.com/nepali-date-convertor/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -42,11 +47,6 @@
   </url>
   <url>
     <loc>https://meropage.com/tech-news/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://meropage.com/tools/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
