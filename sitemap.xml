@@ -91,6 +91,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://meropage.com/tools/image-in-video/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://meropage.com/tools/internet-speed/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
