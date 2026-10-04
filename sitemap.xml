@@ -36,6 +36,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://meropage.com/privacy-policy/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://meropage.com/seo/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -52,6 +57,11 @@
   </url>
   <url>
     <loc>https://meropage.com/tech-news/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meropage.com/terms-of-service/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
