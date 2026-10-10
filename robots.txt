@@ -1,6 +1,16 @@
 User-Agent: *
 Allow: /
 Disallow: /my
+Disallow: /business
+Disallow: /link/profile
+Disallow: /link/qr
+Disallow: /link/business
+Disallow: /build/sites
+Disallow: /build/resumes
+Disallow: /build/presentations
+Disallow: /build/my
+Disallow: /academic/reading
+Disallow: /academic/words
 Disallow: /login
 Disallow: /register
 Disallow: /sites
