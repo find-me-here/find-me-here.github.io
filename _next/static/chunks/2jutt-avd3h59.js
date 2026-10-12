@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,966798,e=>{"use strict";var i=e.i(843476),t=e.i(991997),s=e.i(654295);e.s(["NewsByPath",0,function({slug:e}={}){return(0,i.jsx)(s.NewsRouterProvider,{slug:e,children:(0,i.jsx)(t.NewsApp,{})})}])},616740,function(e){e.n(e.i(966798))}]);
