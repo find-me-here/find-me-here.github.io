@@ -5,13 +5,15 @@ Disallow: /business
 Disallow: /link/profile
 Disallow: /link/qr
 Disallow: /link/business
-Disallow: /build/sites
-Disallow: /build/pages
-Disallow: /build/resumes
-Disallow: /build/presentations
-Disallow: /build/my
+Disallow: /studio/sites
+Disallow: /studio/pages
+Disallow: /studio/resumes
+Disallow: /studio/presentations
+Disallow: /studio/my
+Disallow: /studio/notes
 Disallow: /academic/reading
 Disallow: /academic/words
+Disallow: /academic/notes
 Disallow: /login
 Disallow: /auth
 Disallow: /register
@@ -22,4 +24,4 @@ Disallow: /pages
 Disallow: /qr
 Disallow: /profile
 
-Sitemap: https://meropage.com/sitemap.xml
+Sitemap: https://www.meropage.com/sitemap.xml

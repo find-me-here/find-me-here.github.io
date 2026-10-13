@@ -1,207 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://meropage.com/</loc>
+    <loc>https://www.meropage.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://meropage.com/academic/</loc>
+    <loc>https://www.meropage.com/academic/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/blog/</loc>
+    <loc>https://www.meropage.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/build/</loc>
+    <loc>https://www.meropage.com/calendar/nepali/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meropage.com/calendar/nepali-date-convertor/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meropage.com/downloads/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/calendar/nepali/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://meropage.com/calendar/nepali-date-convertor/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://meropage.com/downloads/</loc>
+    <loc>https://www.meropage.com/games/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/games/</loc>
+    <loc>https://www.meropage.com/games/everest-climber/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meropage.com/games/mero-rider/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.meropage.com/info/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/games/everest-climber/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://meropage.com/games/mero-rider/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://meropage.com/info/</loc>
+    <loc>https://www.meropage.com/link/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/link/</loc>
+    <loc>https://www.meropage.com/practice-reading/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/practice-reading/</loc>
+    <loc>https://www.meropage.com/presentation-maker/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/presentation-maker/</loc>
+    <loc>https://www.meropage.com/privacy-policy/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/privacy-policy/</loc>
+    <loc>https://www.meropage.com/search/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/search/</loc>
+    <loc>https://www.meropage.com/send/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/send/</loc>
+    <loc>https://www.meropage.com/seo/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/seo/</loc>
+    <loc>https://www.meropage.com/services/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/services/</loc>
+    <loc>https://www.meropage.com/stock-market-in-nepal/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/stock-market-in-nepal/</loc>
+    <loc>https://www.meropage.com/studio/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tech-news/</loc>
+    <loc>https://www.meropage.com/tech-news/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/terms-of-service/</loc>
+    <loc>https://www.meropage.com/terms-of-service/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/base64-to-image/</loc>
+    <loc>https://www.meropage.com/tools/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.meropage.com/tools/base64-to-image/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/code-playground/</loc>
+    <loc>https://www.meropage.com/tools/code-playground/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/dns-lookup/</loc>
+    <loc>https://www.meropage.com/tools/dns-lookup/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/docs-to-pdf/</loc>
+    <loc>https://www.meropage.com/tools/docs-to-pdf/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/document-viewer/</loc>
+    <loc>https://www.meropage.com/tools/document-viewer/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/html-minifier/</loc>
+    <loc>https://www.meropage.com/tools/html-minifier/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/image-editor/</loc>
+    <loc>https://www.meropage.com/tools/image-editor/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/image-in-video/</loc>
+    <loc>https://www.meropage.com/tools/image-in-video/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/internet-speed/</loc>
+    <loc>https://www.meropage.com/tools/internet-speed/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/ip-lookup/</loc>
+    <loc>https://www.meropage.com/tools/ip-lookup/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/json/</loc>
+    <loc>https://www.meropage.com/tools/json/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/markdown-to-html/</loc>
+    <loc>https://www.meropage.com/tools/markdown-to-html/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/pdf-merger/</loc>
+    <loc>https://www.meropage.com/tools/pdf-merger/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/pdf-splitter/</loc>
+    <loc>https://www.meropage.com/tools/pdf-splitter/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/pdf-to-markdown/</loc>
+    <loc>https://www.meropage.com/tools/pdf-to-markdown/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/ping/</loc>
+    <loc>https://www.meropage.com/tools/ping/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/read/</loc>
+    <loc>https://www.meropage.com/tools/read/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/signature-maker/</loc>
+    <loc>https://www.meropage.com/tools/signature-maker/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://meropage.com/tools/typing-test/</loc>
+    <loc>https://www.meropage.com/tools/typing-test/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
