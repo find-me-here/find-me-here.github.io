@@ -6,6 +6,7 @@ Disallow: /link/profile
 Disallow: /link/qr
 Disallow: /link/business
 Disallow: /build/sites
+Disallow: /build/pages
 Disallow: /build/resumes
 Disallow: /build/presentations
 Disallow: /build/my
