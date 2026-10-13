@@ -1,7 +1,9 @@
 User-Agent: *
 Allow: /
 Disallow: /my
-Disallow: /business
+Disallow: /business/shop
+Disallow: /business/news
+Disallow: /business/social
 Disallow: /link/profile
 Disallow: /link/qr
 Disallow: /link/business
