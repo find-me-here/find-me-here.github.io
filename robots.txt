@@ -12,6 +12,7 @@ Disallow: /build/my
 Disallow: /academic/reading
 Disallow: /academic/words
 Disallow: /login
+Disallow: /auth
 Disallow: /register
 Disallow: /sites
 Disallow: /resumes
