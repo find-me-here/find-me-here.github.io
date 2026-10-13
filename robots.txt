@@ -1,6 +1,7 @@
 User-Agent: *
 Allow: /
 Disallow: /my
+Disallow: /captures
 Disallow: /business/shop
 Disallow: /business/news
 Disallow: /business/social
