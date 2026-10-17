@@ -17,6 +17,9 @@ Disallow: /studio/notes
 Disallow: /academic/reading
 Disallow: /academic/words
 Disallow: /academic/notes
+Disallow: /tools/notes
+Disallow: /tools/captures
+Disallow: /tools/posts
 Disallow: /login
 Disallow: /auth
 Disallow: /register
