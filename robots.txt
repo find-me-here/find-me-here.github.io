@@ -20,6 +20,7 @@ Disallow: /academic/notes
 Disallow: /tools/notes
 Disallow: /tools/captures
 Disallow: /tools/posts
+Disallow: /tools/reminder
 Disallow: /login
 Disallow: /auth
 Disallow: /register
